@@ -29,6 +29,5 @@ public struct Recipe: Codable {
     let calories, totalWeight: Double?
     let totalTime: Int?
     let cuisineType, mealType, dishType: [String]?
-//    let totalNutrients, totalDaily: [String: Total]?
     let digest: [Digest]?
 }
