@@ -17,6 +17,7 @@
 		F02CE9A92909792A00BB0D85 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CE9A82909792A00BB0D85 /* Digest.swift */; };
 		F02CE9AB2909793900BB0D85 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CE9AA2909793900BB0D85 /* Images.swift */; };
 		F02CE9B629097E2A00BB0D85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F02CE9B529097E2A00BB0D85 /* README.md */; };
+		F02CE9B82909846400BB0D85 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CE9B72909846400BB0D85 /* Unit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		F02CE9A82909792A00BB0D85 /* Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
 		F02CE9AA2909793900BB0D85 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F02CE9B529097E2A00BB0D85 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F02CE9B72909846400BB0D85 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				F02CE9A6290978EC00BB0D85 /* Ingredient.swift */,
 				F02CE9A82909792A00BB0D85 /* Digest.swift */,
 				F02CE9AA2909793900BB0D85 /* Images.swift */,
+				F02CE9B72909846400BB0D85 /* Unit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				F02CE9AB2909793900BB0D85 /* Images.swift in Sources */,
 				F02CE9A1290978A200BB0D85 /* Response.swift in Sources */,
 				F02CE9A3290978C500BB0D85 /* Links.swift in Sources */,
+				F02CE9B82909846400BB0D85 /* Unit.swift in Sources */,
 				F02CE9A7290978EC00BB0D85 /* Ingredient.swift in Sources */,
 				F02CE9A5290978D700BB0D85 /* Recipe.swift in Sources */,
 				F02CE9A92909792A00BB0D85 /* Digest.swift in Sources */,
