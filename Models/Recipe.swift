@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 26.10.2022.
 //
 
-struct Hit: Codable {
+public struct Hit: Codable {
     let recipe: Recipe?
     let links: HitLinks?
     
@@ -15,7 +15,7 @@ struct Hit: Codable {
     }
 }
 
-struct Recipe: Codable {
+public struct Recipe: Codable {
     let uri: String?
     let label: String?
     let image: String?

@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 26.10.2022.
 //
 
-struct Images: Codable {
+public struct Images: Codable {
     let thumbnail, small, regular: Image?
     
     enum CodingKeys: String, CodingKey {
@@ -15,7 +15,7 @@ struct Images: Codable {
     }
 }
 
-struct Image: Codable {
+public struct Image: Codable {
     let url: String?
     let width, height: Int?
 }

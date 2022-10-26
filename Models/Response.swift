@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response: Codable {
+public struct Response: Codable {
     let from, to, count: Int?
     let links: Links?
     let hits: [Hit]?

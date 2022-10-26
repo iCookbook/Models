@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 26.10.2022.
 //
 
-struct Ingredient: Codable {
+public struct Ingredient: Codable {
     let text: String?
     let quantity: Double?
     let measure: String?
