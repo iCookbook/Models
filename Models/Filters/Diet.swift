@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 30.10.2022.
 //
 
-/// Различные виды диет, предоставляемые API.
+/// Various types of diets provided by the API.
 public enum Diet: String, Codable {
     /// Protein/Fat/Carb values in 15/35/50 ratio.
     case balanced = "Balanced"

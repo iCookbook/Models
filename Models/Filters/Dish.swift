@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 30.10.2022.
 //
 
-/// Различные виды блюд, предоставляемые API.
+/// Various types of dishes provided by the API.
 public enum Dish: String, Codable {
     case alcoholCocktail = "alcohol cocktail"
     case biscuitsAndCookies = "biscuits and cookies"

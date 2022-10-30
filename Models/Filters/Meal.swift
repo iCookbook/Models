@@ -5,12 +5,11 @@
 //  Created by Егор Бадмаев on 30.10.2022.
 //
 
-/// Приёмы пищи.
+/// Meal types.
 public enum Meal: String, Codable {
     case breakfast
     case brunch
-    case lunch
-    case dinner
+    case lunchDinner = "lunch/dinner"
     case snack
     case teatime
 }

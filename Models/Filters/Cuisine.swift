@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 30.10.2022.
 //
 
-/// Различные кухни мира.
+/// Various cuisines of the world.
 public enum Cuisine: String, Codable {
     case american = "american"
     case asian = "asian"

@@ -18,37 +18,32 @@ public struct Hit: Codable {
 public struct Recipe: Codable {
     let uri: String?
     let label: String?
-    /// Ссылка на изображение.
+    /// Image link.
     let image: String?
-    /// Стркуктура с ссылками на изображения с разными размерами.
+    /// A structure with links to images with different sizes.
     let images: Images?
-    /// Источник, откуда был взят рецепт.
+    /// The source from where the recipe was taken.
     let source: String?
-    /// Ссылка на источник.
+    /// Source link.
     let url: String?
     let shareAs: String?
     let healthLabels, cautions, ingredientLines: [String]?
-    /// Массив ингридиентов.
+    /// Array of ingredients.
     let ingredients: [Ingredient]?
-    /// Калории и итоговый вес блюда.
+    /// The number of calories and total weight of the dish.
     let calories, totalWeight: Double?
-    /// Количество порций.
-    let yield: Int?
-    /// Время приготовления блюда.
-    let totalTime: Int?
-    /// Список всех возможных диетических этикеток, составленный на основе информации о питательных веществах в рецептах.
-//    let dietLabels: [String]?
+    /// Number of servings.
+    let yield: Double?
+    /// Cooking time.
+    let totalTime: Double?
+    /// A list of all possible dietary labels, compiled based on information about nutrients in recipes.
     let dietLabels: [Diet]?
-    /// Список всех возможных видов кухни. Типы кухни относятся к кухне, под которую подпадает рецепт.
-//    let cuisineType: [String]?
+    /// A list of all possible types of cuisine. Kitchen types refer to the kitchen that the recipe falls under.
     let cuisineType: [Cuisine]?
-    /// Список всех возможных видов еды. Типы блюд относятся к приемам пищи в течение дня, в которые обычно употребляется рецепт.
-//    let mealType: [String]?
+    /// A list of all possible types of food. The types of dishes refer to the meals during the day in which the recipe is usually consumed.
     let mealType: [Meal]?
-    /// Список всех возможных видов блюд. Типы блюд относятся к категории продуктов, к которым относится рецепт.
-//    let dishType: [String]?
+    /// A list of all possible types of dishes. The types of dishes belong to the category of products to which the recipe belongs.
     let dishType: [Dish]?
-    /// Краткая информация по различным данным: белки, жиры, углеводы, калории и тд.
-//    let digest: [String]?
+    /// Brief information on various data: proteins, fats, carbohydrates, calories, etc.
     let digest: [Digest]?
 }
