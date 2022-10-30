@@ -6,6 +6,13 @@
 //
 
 public struct Images: Codable {
+    /**
+     Image Size | Dimensions
+     Thumbnail  | 100×100
+     Small          | 200×200
+     Regular      | 300×300
+     Large         | 600×600
+     */
     let thumbnail, small, regular: Image?
     
     enum CodingKeys: String, CodingKey {

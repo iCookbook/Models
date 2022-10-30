@@ -8,8 +8,13 @@
 import Foundation
 
 public struct Response: Codable {
-    let from, to, count: Int?
+    /// Количество результатов поиска.
+    let from, to: Int?
+    /// Общее количество найденных результатов поиска.
+    let count: Int?
+    /// Ссылка на следующий запрос.
     let links: Links?
+    /// Набор рецептов, **попавших** под выбранные критерии.
     let hits: [Hit]?
     
     enum CodingKeys: String, CodingKey {

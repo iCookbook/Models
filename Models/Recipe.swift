@@ -6,7 +6,9 @@
 //
 
 public struct Hit: Codable {
+    /// Instance рецепта.
     let recipe: Recipe?
+    /// Ссылки на рецепт.
     let links: HitLinks?
     
     enum CodingKeys: String, CodingKey {

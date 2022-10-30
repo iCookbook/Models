@@ -6,6 +6,7 @@
 //
 
 public struct Links: Codable {
+    /// Ссылка на следующую страницу.
     let next: Next?
 }
 
@@ -18,6 +19,8 @@ public struct HitLinks: Codable {
 }
 
 public struct Next: Codable {
+    /// Ссылка на следующий рецепт.
     let href: String?
+    /// Заголовок для кнопки.
     let title: String?
 }

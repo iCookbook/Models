@@ -6,12 +6,21 @@
 //
 
 public struct Ingredient: Codable {
+    /// Название ингредиента.
     let text: String?
+    /// Количество ингредиента.
     let quantity: Double?
+    /// Единица измерения.
     let measure: String?
+    /// Обобщённое название. Например: курица.
     let food: String?
+    /// Вес.
     let weight: Double?
-    let foodCategory, foodID: String?
+    /// Категория еды.
+    let foodCategory: String?
+    /// Идентификатор еды.
+    let foodID: String?
+    /// Ссылка на получение изображения.
     let image: String?
     
     enum CodingKeys: String, CodingKey {
