@@ -11,6 +11,4 @@ public struct Digest: Codable {
     let total: Double?
     let hasRDI: Bool?
     let daily: Double?
-    let unit: Unit?
-    let sub: [Digest]?
 }
