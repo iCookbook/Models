@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Response: Codable {
-    let from, to, count: Int?
-    let links: Links?
-    let hits: [Hit]?
+    public let from, to, count: Int?
+    public let links: Links?
+    public let hits: [Hit]?
     
     enum CodingKeys: String, CodingKey {
         case from, to, count

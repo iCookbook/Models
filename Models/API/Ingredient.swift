@@ -6,13 +6,13 @@
 //
 
 public struct Ingredient: Codable {
-    let text: String?
-    let quantity: Double?
-    let measure: String?
-    let food: String?
-    let weight: Double?
-    let foodCategory, foodID: String?
-    let image: String?
+    public let text: String?
+    public let quantity: Double?
+    public let measure: String?
+    public let food: String?
+    public let weight: Double?
+    public let foodCategory, foodID: String?
+    public let image: String?
     
     enum CodingKeys: String, CodingKey {
         case text, quantity, measure, food, weight, foodCategory

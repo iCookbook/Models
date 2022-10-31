@@ -1,0 +1,50 @@
+//
+//  Recipe.swift
+//  Models
+//
+//  Created by Егор Бадмаев on 26.10.2022.
+//
+
+public struct Hit: Codable {
+    /// Recipe itself.
+    public let recipe: Recipe?
+    /// Link to the recipe.
+    public let links: HitLinks?
+    
+    enum CodingKeys: String, CodingKey {
+        case recipe
+        case links = "_links"
+    }
+}
+
+public struct Recipe: Codable {
+    /// Name of the recipe.
+    public let label: String?
+    /// Image link.
+    public let image: String?
+    /// A structure with links to images with different sizes.
+    public let images: Images?
+    /// The source from where the recipe was taken.
+    public let source: String?
+    /// Source link.
+    public let url: String?
+    public let healthLabels, cautions, ingredientLines: [String]?
+    /// Array of ingredients.
+    public let ingredients: [Ingredient]?
+    /// The number of calories and total weight of the dish.
+    public let calories, totalWeight: Double?
+    /// Number of servings.
+    public let yield: Double?
+    /// Cooking time.
+    public let totalTime: Double?
+    /// A list of all possible dietary labels, compiled based on information about nutrients in recipes.
+    public let dietLabels: [Diet]?
+    /// A list of all possible types of cuisine. Kitchen types refer to the kitchen that the recipe falls under.
+    public let cuisineType: [Cuisine]?
+    /// A list of all possible types of food. The types of dishes refer to the meals during the day in which the recipe is usually consumed.
+    public let mealType: [Meal]?
+    /// A list of all possible types of dishes. The types of dishes belong to the category of products to which the recipe belongs.
+    public let dishType: [Dish]?
+    /// Brief information on various data: proteins, fats, carbohydrates, calories, etc.
+    public let digest: [Digest]?
+}

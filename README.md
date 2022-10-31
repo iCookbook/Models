@@ -1,3 +1,3 @@
 # Models
 
-В данном модулен представлен слой, отвечающий за модели данных приложения
+This module presents a layer responsible for the application data models
