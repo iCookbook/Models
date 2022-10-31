@@ -18,6 +18,8 @@ public struct HitLinks: Codable {
 }
 
 public struct Next: Codable {
+    /// URL link.
     public let href: String?
+    /// A title specifying what kind of link it is.
     public let title: String?
 }
