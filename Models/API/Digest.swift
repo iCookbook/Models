@@ -6,9 +6,9 @@
 //
 
 public struct Digest: Codable {
-    let label, tag: String?
-    let schemaOrgTag: String?
-    let total: Double?
-    let hasRDI: Bool?
-    let daily: Double?
+    public let label, tag: String?
+    public let schemaOrgTag: String?
+    public let total: Double?
+    public let hasRDI: Bool?
+    public let daily: Double?
 }
