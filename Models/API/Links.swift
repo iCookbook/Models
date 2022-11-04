@@ -6,11 +6,11 @@
 //
 
 public struct Links: Codable {
-    let next: Next?
+    public let next: Next?
 }
 
 public struct HitLinks: Codable {
-    let linksSelf: Next?
+    public let linksSelf: Next?
     
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
@@ -18,6 +18,8 @@ public struct HitLinks: Codable {
 }
 
 public struct Next: Codable {
-    let href: String?
-    let title: String?
+    /// URL link.
+    public let href: String?
+    /// A title specifying what kind of link it is.
+    public let title: String?
 }

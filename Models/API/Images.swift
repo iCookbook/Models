@@ -6,7 +6,7 @@
 //
 
 public struct Images: Codable {
-    let thumbnail, small, regular: Image?
+    public let thumbnail, small, regular: Image?
     
     enum CodingKeys: String, CodingKey {
         case thumbnail = "THUMBNAIL"
@@ -16,6 +16,6 @@ public struct Images: Codable {
 }
 
 public struct Image: Codable {
-    let url: String?
-    let width, height: Int?
+    public let url: String?
+    public let width, height: Int?
 }
