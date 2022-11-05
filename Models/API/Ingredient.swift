@@ -28,4 +28,17 @@ public struct Ingredient: Codable {
         case foodID = "foodId"
         case image
     }
+    
+    // MARK: - Init
+    
+    public init(text: String?, quantity: Double?, measure: String?, food: String?, weight: Double?, foodCategory: String?, foodID: String?, image: String?) {
+        self.text = text
+        self.quantity = quantity
+        self.measure = measure
+        self.food = food
+        self.weight = weight
+        self.foodCategory = foodCategory
+        self.foodID = foodID
+        self.image = image
+    }
 }
