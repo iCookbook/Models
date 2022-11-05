@@ -26,4 +26,12 @@ public struct Images: Codable {
 public struct Image: Codable {
     public let url: String?
     public let width, height: Int?
+    
+    // MARK: - Init
+    
+    public init(url: String?, width: Int?, height: Int?) {
+        self.url = url
+        self.width = width
+        self.height = height
+    }
 }
