@@ -15,6 +15,13 @@ public struct Hit: Codable {
         case recipe
         case links = "_links"
     }
+    
+    // MARK: - Init
+    
+    public init(recipe: Recipe?, links: HitLinks?) {
+        self.recipe = recipe
+        self.links = links
+    }
 }
 
 public struct Recipe: Codable {
@@ -47,4 +54,27 @@ public struct Recipe: Codable {
     public let dishType: [Dish]?
     /// Brief information on various data: proteins, fats, carbohydrates, calories, etc.
     public let digest: [Digest]?
+    
+    // MARK: - Init
+    
+    public init(label: String?, image: String?, images: Images?, source: String?, url: String?, healthLabels: [String]?, cautions: [String]?, ingredientLines: [String]?, ingredients: [Ingredient]?, calories: Double?, totalWeight: Double?, yield: Double?, totalTime: Double?, dietLabels: [Diet]?, cuisineType: [Cuisine]?, mealType: [Meal]?, dishType: [Dish]?, digest: [Digest]?) {
+        self.label = label
+        self.image = image
+        self.images = images
+        self.source = source
+        self.url = url
+        self.healthLabels = healthLabels
+        self.cautions = cautions
+        self.ingredientLines = ingredientLines
+        self.ingredients = ingredients
+        self.calories = calories
+        self.totalWeight = totalWeight
+        self.yield = yield
+        self.totalTime = totalTime
+        self.dietLabels = dietLabels
+        self.cuisineType = cuisineType
+        self.mealType = mealType
+        self.dishType = dishType
+        self.digest = digest
+    }
 }

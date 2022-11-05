@@ -13,6 +13,14 @@ public struct Images: Codable {
         case small = "SMALL"
         case regular = "REGULAR"
     }
+    
+    // MARK: - Init
+    
+    public init(thumbnail: Image?, small: Image?, regular: Image?) {
+        self.thumbnail = thumbnail
+        self.small = small
+        self.regular = regular
+    }
 }
 
 public struct Image: Codable {
