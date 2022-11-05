@@ -17,4 +17,14 @@ public struct Response: Codable {
         case links = "_links"
         case hits
     }
+    
+    // MARK: - Init
+    
+    public init(from: Int?, to: Int?, count: Int?, links: Links?, hits: [Hit]?) {
+        self.from = from
+        self.to = to
+        self.count = count
+        self.links = links
+        self.hits = hits
+    }
 }

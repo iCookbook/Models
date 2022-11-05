@@ -13,9 +13,25 @@ public struct Images: Codable {
         case small = "SMALL"
         case regular = "REGULAR"
     }
+    
+    // MARK: - Init
+    
+    public init(thumbnail: Image?, small: Image?, regular: Image?) {
+        self.thumbnail = thumbnail
+        self.small = small
+        self.regular = regular
+    }
 }
 
 public struct Image: Codable {
     public let url: String?
     public let width, height: Int?
+    
+    // MARK: - Init
+    
+    public init(url: String?, width: Int?, height: Int?) {
+        self.url = url
+        self.width = width
+        self.height = height
+    }
 }

@@ -11,4 +11,15 @@ public struct Digest: Codable {
     public let total: Double?
     public let hasRDI: Bool?
     public let daily: Double?
+    
+    // MARK: - Init
+    
+    public init(label: String?, tag: String?, schemaOrgTag: String?, total: Double?, hasRDI: Bool?, daily: Double?) {
+        self.label = label
+        self.tag = tag
+        self.schemaOrgTag = schemaOrgTag
+        self.total = total
+        self.hasRDI = hasRDI
+        self.daily = daily
+    }
 }
