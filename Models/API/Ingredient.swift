@@ -6,17 +6,17 @@
 //
 
 public struct Ingredient: Codable {
-	/// Ingredient name.
+	/// Ingredient's description (name and measure).
     public let text: String?
     /// Ingredient quantity.
     public let quantity: Double?
     /// Unit of measurement.
     public let measure: String?
-    /// Generalized name. For example: chicken.
+    /// Ingredient name.
     public let food: String?
     /// Weight of the ingredient.
     public let weight: Double?
-    /// Food category.
+    /// Food category. For example: chicken.
     public let foodCategory: String?
     /// Food identifier.
     public let foodID: String?
