@@ -78,3 +78,9 @@ public struct Recipe: Codable {
         self.digest = digest
     }
 }
+
+extension Recipe: Equatable {
+    public static func == (lhs: Recipe, rhs: Recipe) -> Bool {
+        lhs.label == rhs.label
+    }
+}
