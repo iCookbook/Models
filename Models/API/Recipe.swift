@@ -81,6 +81,6 @@ public struct Recipe: Codable {
 
 extension Recipe: Equatable {
     public static func == (lhs: Recipe, rhs: Recipe) -> Bool {
-        lhs.label == rhs.label
+        lhs.url == rhs.url
     }
 }
