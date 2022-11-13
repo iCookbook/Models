@@ -13,3 +13,20 @@ public enum Meal: String, Codable {
     case snack
     case teatime
 }
+
+extension Meal {
+    var emoji: String {
+        switch self {
+        case .breakfast:
+            return "🥞"
+        case .brunch:
+            return "🍎"
+        case .lunchDinner:
+            return "🥘"
+        case .snack:
+            return "🥪"
+        case .teatime:
+            return "☕️"
+        }
+    }
+}

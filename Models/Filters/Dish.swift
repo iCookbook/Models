@@ -33,3 +33,60 @@ public enum Dish: String, Codable {
     case starter = "starter"
     case sweets = "sweets"
 }
+
+extension Dish {
+    var emoji: String {
+        switch self {
+        case .alcoholCocktail:
+            return "🍸"
+        case .biscuitsAndCookies:
+            return "🍪"
+        case .bread:
+            return "🍞"
+        case .cereals:
+            return "🌾"
+        case .condimentsAndSauces:
+            return "🧂"
+        case .desserts:
+            return "🍰"
+        case .drinks:
+            return "🍹"
+        case .egg:
+            return "🥚"
+        case .iceCreamAndCustard:
+            return "🍦"
+        case .mainCourse:
+            return "🥘"
+        case .pancake:
+            return "🥞"
+        case .pasta:
+            return "🍝"
+        case .pastry:
+            return "🥐"
+        case .piesAndTarts:
+            return "🥧"
+        case .pizza:
+            return "🍕"
+        case .preps:
+            return "🧆"
+        case .preserve:
+            return "🥫"
+        case .salad:
+            return "🥗"
+        case .sandwiches:
+            return "🥪"
+        case .seafood:
+            return "🍤"
+        case .sideDish:
+            return "🍛"
+        case .soup:
+            return "🍵"
+        case .specialOccasions:
+            return "🫕"
+        case .starter:
+            return "🍲"
+        case .sweets:
+            return "🍬"
+        }
+    }
+}
