@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Models'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Models layer of the project.'
   s.homepage         = 'https://github.com/iCookbook/Models'
   s.author           = { 'htmlprogrammist' => '60363270+htmlprogrammist@users.noreply.github.com' }
