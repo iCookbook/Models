@@ -78,7 +78,7 @@ extension Dish {
         case .seafood:
             return "🍤"
         case .sideDish:
-            return "🍛"
+            return "🥔"
         case .soup:
             return "🍵"
         case .specialOccasions:
