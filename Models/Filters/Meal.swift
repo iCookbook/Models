@@ -15,7 +15,7 @@ public enum Meal: String, Codable {
 }
 
 extension Meal {
-    var emoji: String {
+    public var emoji: String {
         switch self {
         case .breakfast:
             return "🥞"

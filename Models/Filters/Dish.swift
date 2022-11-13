@@ -35,7 +35,7 @@ public enum Dish: String, Codable {
 }
 
 extension Dish {
-    var emoji: String {
+    public var emoji: String {
         switch self {
         case .alcoholCocktail:
             return "🍸"
