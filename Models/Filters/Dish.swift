@@ -35,6 +35,7 @@ public enum Dish: String, Codable {
 }
 
 extension Dish {
+    /// Emoji for any instance of this enum.
     public var emoji: String {
         switch self {
         case .alcoholCocktail:
@@ -88,5 +89,10 @@ extension Dish {
         case .sweets:
             return "🍬"
         }
+    }
+    
+    /// List of all instances of this enum.
+    public static var dishes: [Dish] {
+        return [.alcoholCocktail, .biscuitsAndCookies, .bread, .cereals, .condimentsAndSauces, .desserts, .drinks, .egg, .iceCreamAndCustard, .mainCourse, .pancake, .pasta, .pastry, .piesAndTarts, .pizza, .preps, .preserve, .salad, .sandwiches, .seafood, .sideDish, .soup, .specialOccasions, .starter, .sweets]
     }
 }
