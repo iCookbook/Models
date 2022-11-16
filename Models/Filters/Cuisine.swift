@@ -29,3 +29,48 @@ public enum Cuisine: String, Codable {
     case southEastAsian = "south east asian"
     case world = "world"
 }
+
+extension Cuisine {
+    /// Emoji for any instance of this enum.
+    public var emoji: String {
+        switch self {
+        case .american:
+            return "🇺🇸"
+        case .asian:
+            return "🌏"
+        case .british:
+            return "🇬🇧"
+        case .centralEurope:
+            return "🧆"
+        case .chinese:
+            return "🇨🇳"
+        case .easternEurope:
+            return "🥟"
+        case .french:
+            return "🇫🇷"
+        case .greek:
+            return "🇬🇷"
+        case .indian:
+            return "🇮🇳"
+        case .italian:
+            return "🇮🇹"
+        case .japanese:
+            return "🇯🇵"
+        case .korean:
+            return "🇰🇷"
+        case .mexican:
+            return "🇲🇽"
+        case .nordic:
+            return "🇳🇴"
+        case .world:
+            return "🌏"
+        default:
+            return ""
+        }
+    }
+    
+    /// List of instances of this enum with emoji.
+    public static var cuisines: [Cuisine] {
+        return [.american, .asian, .british, .centralEurope, .chinese, .easternEurope, .french, .greek, .indian, .italian, .japanese, .korean, .mexican, .nordic, .world]
+    }
+}
