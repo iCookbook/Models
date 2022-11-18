@@ -5,6 +5,7 @@
 //  Created by Егор Бадмаев on 26.10.2022.
 //
 
+/// Wrapper over recipe and link to itself.
 public struct Hit: Codable {
     /// Recipe itself.
     public let recipe: Recipe?
@@ -24,6 +25,7 @@ public struct Hit: Codable {
     }
 }
 
+/// Recipe model.
 public struct Recipe: Codable {
     /// Name of the recipe.
     public let label: String?
@@ -54,10 +56,12 @@ public struct Recipe: Codable {
     public let dishType: [Dish]?
     /// Brief information on various data: proteins, fats, carbohydrates, calories, etc.
     public let digest: [Digest]?
+    /// User's recipe description.
+    public var description: String? = ""
     
     // MARK: - Init
     
-    public init(label: String?, image: String?, images: Images?, source: String?, url: String?, healthLabels: [String]?, cautions: [String]?, ingredientLines: [String]?, ingredients: [Ingredient]?, calories: Double?, totalWeight: Double?, yield: Double?, totalTime: Double?, dietLabels: [Diet]?, cuisineType: [Cuisine]?, mealType: [Meal]?, dishType: [Dish]?, digest: [Digest]?) {
+    public init(label: String?, image: String?, images: Images?, source: String?, url: String?, healthLabels: [String]?, cautions: [String]?, ingredientLines: [String]?, ingredients: [Ingredient]?, calories: Double?, totalWeight: Double?, yield: Double?, totalTime: Double?, dietLabels: [Diet]?, cuisineType: [Cuisine]?, mealType: [Meal]?, dishType: [Dish]?, digest: [Digest]?, description: String?) {
         self.label = label
         self.image = image
         self.images = images
@@ -76,6 +80,7 @@ public struct Recipe: Codable {
         self.mealType = mealType
         self.dishType = dishType
         self.digest = digest
+        self.description = description
     }
 }
 

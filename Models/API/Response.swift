@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Server's response.
 public struct Response: Codable {
     public let from, to, count: Int?
     public let links: Links?
