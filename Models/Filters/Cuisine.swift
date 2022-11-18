@@ -40,8 +40,6 @@ extension Cuisine {
             return "🌏"
         case .british:
             return "🇬🇧"
-        case .centralEurope:
-            return "🧆"
         case .chinese:
             return "🇨🇳"
         case .easternEurope:
@@ -71,6 +69,6 @@ extension Cuisine {
     
     /// List of instances of this enum with emoji.
     public static var cuisines: [Cuisine] {
-        return [.american, .asian, .british, .centralEurope, .chinese, .easternEurope, .french, .greek, .indian, .italian, .japanese, .korean, .mexican, .nordic, .world]
+        return [.american, .asian, .british, .chinese, .easternEurope, .french, .greek, .indian, .italian, .japanese, .korean, .mexican, .nordic, .world]
     }
 }
