@@ -57,9 +57,9 @@ public class Recipe: Codable {
     /// Brief information on various data: proteins, fats, carbohydrates, calories, etc.
     public let digest: [Digest]?
     /// User's recipe description.
-    public var description: String? = ""
+    public var description: String? = nil
     /// Image data.
-    public var imageData: Data? = Data()
+    public var imageData: Data? = nil
     
     // MARK: - Init
     
