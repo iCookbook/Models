@@ -20,6 +20,7 @@ class DigestTests: XCTestCase {
         try super.tearDownWithError()
     }
     
+    /// Testing simple init that is being used in `NutrientsCollectionViewDataSource` where we need to provide only 2 properties.
     func testSimpleInit() throws {
         digest = Digest(label: testLabel, total: testTotal)
         

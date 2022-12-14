@@ -6,7 +6,7 @@
 //
 
 /// Various types of diets provided by the API.
-public enum Diet: String, Codable {
+public enum Diet: String, Codable, CaseIterable {
     /// Protein/Fat/Carb values in 15/35/50 ratio.
     case balanced = "Balanced"
     /// More than 5g fiber per serving.

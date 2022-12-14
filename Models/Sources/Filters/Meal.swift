@@ -6,7 +6,7 @@
 //
 
 /// Meal types.
-public enum Meal: String, Codable {
+public enum Meal: String, Codable, CaseIterable {
     case breakfast
     case brunch
     case lunchDinner = "lunch/dinner"

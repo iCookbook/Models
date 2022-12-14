@@ -10,10 +10,11 @@ import XCTest
 
 class RecipeTests: XCTestCase {
     
+    /// SUT
     var recipe: Recipe!
     
     override func setUpWithError() throws {
-        recipe = Recipe(label: nil, image: nil, images: nil, source: nil, url: nil, healthLabels: nil, cautions: nil, ingredientLines: nil, ingredients: nil, calories: nil, totalWeight: nil, yield: nil, totalTime: nil, dietLabels: nil, cuisineType: nil, mealType: nil, dishType: nil, digest: nil)
+        recipe = Recipe(label: nil, image: nil, images: nil, source: nil, url: nil, ingredients: nil, calories: nil, totalWeight: nil, yield: nil, totalTime: nil, dietLabels: nil, cuisineType: nil, mealType: nil, dishType: nil, digest: nil)
     }
     
     override func tearDownWithError() throws {
