@@ -30,9 +30,12 @@ public enum Cuisine: String, Codable {
     case world = "world"
 }
 
-extension Cuisine {
-    /// Emoji for any instance of this enum.
-    public var emoji: String {
+extension Cuisine: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
         switch self {
         case .american:
             return "🇺🇸"

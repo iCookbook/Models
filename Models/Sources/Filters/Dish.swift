@@ -34,9 +34,12 @@ public enum Dish: String, Codable, CaseIterable {
     case sweets = "sweets"
 }
 
-extension Dish {
-    /// Emoji for any instance of this enum.
-    public var emoji: String {
+extension Dish: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
         switch self {
         case .alcoholCocktail:
             return "🍸"

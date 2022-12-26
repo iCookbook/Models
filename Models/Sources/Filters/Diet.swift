@@ -20,3 +20,13 @@ public enum Diet: String, Codable, CaseIterable {
     /// Less than 140mg Na per serving.
     case lowSodium = "Low-Sodium"
 }
+
+extension Diet: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
+        nil
+    }
+}
