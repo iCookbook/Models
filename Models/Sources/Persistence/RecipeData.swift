@@ -9,20 +9,20 @@
 ///
 /// It represents all the properties from `Recipe` class.
 public struct RecipeData {
-    public let name: String
-    public let dateCreated: Date
-    public let numberOfServings: Int32
-    public let proteins: Double
-    public let fats: Double
-    public let carbohydrates: Double
-    public let calories: Double
-    public let cookingTime: Int32
-    public let comment: String?
-    public let ingredients: [String]?
-    public let imageData: Data?
-    public let steps: [StepData]?
+    public var name: String
+    public var dateCreated: Date
+    public var numberOfServings: Int32?
+    public var proteins: Double?
+    public var fats: Double?
+    public var carbohydrates: Double?
+    public var calories: Double?
+    public var cookingTime: Int32?
+    public var comment: String?
+    public var ingredients: [String]?
+    public var imageData: Data?
+    public var steps: [StepData]?
     
-    public init(name: String, dateCreated: Date, numberOfServings: Int32, proteins: Double, fats: Double, carbohydrates: Double, calories: Double, cookingTime: Int32, comment: String?, ingredients: [String]?, imageData: Data?, steps: [StepData]?) {
+    public init(name: String, dateCreated: Date, numberOfServings: Int32?, proteins: Double?, fats: Double?, carbohydrates: Double?, calories: Double?, cookingTime: Int32?, comment: String?, ingredients: [String]?, imageData: Data?, steps: [StepData]?) {
         self.name = name
         self.dateCreated = dateCreated
         self.numberOfServings = numberOfServings
@@ -38,19 +38,45 @@ public struct RecipeData {
     }
 }
 
+extension RecipeData: Equatable {
+    public static func == (lhs: RecipeData, rhs: RecipeData) -> Bool {
+        return lhs.name == rhs.name &&
+        lhs.dateCreated == rhs.dateCreated &&
+        lhs.numberOfServings == rhs.numberOfServings &&
+        lhs.proteins == rhs.proteins &&
+        lhs.fats == rhs.fats &&
+        lhs.carbohydrates == rhs.carbohydrates &&
+        lhs.calories == rhs.calories &&
+        lhs.cookingTime == rhs.cookingTime &&
+        lhs.comment == rhs.comment &&
+        lhs.ingredients == rhs.ingredients &&
+        lhs.imageData == rhs.imageData
+    }
+}
+
 extension RecipeData {
-    public init() {
-        self.init(name: "",
-                  dateCreated: Date(),
-                  numberOfServings: 0,
-                  proteins: 0.0,
-                  fats: 0.0,
-                  carbohydrates: 0.0,
-                  calories: 0.0,
-                  cookingTime: 0,
-                  comment: nil,
-                  ingredients: nil,
-                  imageData: nil,
-                  steps: nil)
+    public static var `default`: RecipeData {
+        RecipeData(name: "",
+                   dateCreated: Date(),
+                   numberOfServings: nil,
+                   proteins: nil,
+                   fats: nil,
+                   carbohydrates: nil,
+                   calories: nil,
+                   cookingTime: nil,
+                   comment: nil,
+                   ingredients: nil,
+                   imageData: nil,
+                   steps: [StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil),
+                           StepData(text: "", imageData: nil)]
+        )
     }
 }
