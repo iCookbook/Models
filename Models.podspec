@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
-  s.source_files = 'Models/Sources/**/*.{swift}'
   
+  s.source_files = 'Models/Sources/**/*.{swift}'
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'Models/Tests/**/*.{swift}'
   end
