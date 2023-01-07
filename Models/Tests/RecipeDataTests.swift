@@ -20,6 +20,20 @@ class RecipeDataTests: XCTestCase {
         recipeData = nil
     }
     
-    func testExample() throws {
+    func testRecipeDataDefault() throws {
+        recipeData = RecipeData.default
+        
+        XCTAssertEqual(recipeData.name, "")
+        XCTAssertNotNil(recipeData.dateCreated)
+        XCTAssertNil(recipeData.numberOfServings)
+        XCTAssertNil(recipeData.proteins)
+        XCTAssertNil(recipeData.fats)
+        XCTAssertNil(recipeData.carbohydrates)
+        XCTAssertNil(recipeData.calories)
+        XCTAssertNil(recipeData.cookingTime)
+        XCTAssertNil(recipeData.comment)
+        XCTAssertNil(recipeData.ingredients)
+        XCTAssertNil(recipeData.imageData)
+        XCTAssertEqual(recipeData.steps?.count, 10)
     }
 }

@@ -10,6 +10,7 @@ import XCTest
 
 class DigestTests: XCTestCase {
     
+    /// SUT
     var digest: Digest!
     
     private let testLabel = "Label"
@@ -17,7 +18,6 @@ class DigestTests: XCTestCase {
     
     override func tearDownWithError() throws {
         digest = nil
-        try super.tearDownWithError()
     }
     
     /// Testing simple init that is being used in `NutrientsCollectionViewDataSource` where we need to provide only 2 properties.
@@ -44,4 +44,64 @@ class DigestTests: XCTestCase {
         XCTAssertNotNil(digest.hasRDI)
         XCTAssertNotNil(digest.daily)
     }
+    
+    // MARK: - Codable tests
+    
+    func test_decodeDigest_array() throws {
+        let result = try JSONDecoder().decode([Digest].self, from: digest1)
+        XCTAssertEqual(result[0].label, "Fat")
+        XCTAssertEqual(result[0].tag, "FAT")
+        XCTAssertEqual(result[0].schemaOrgTag, "fatContent")
+        XCTAssertEqual(result[0].total, 12.843255294562502)
+        XCTAssertEqual(result[0].hasRDI, true)
+        XCTAssertEqual(result[0].daily, 19.758854299326927)
+    }
+    
+    func test_decodeDigest_arrayWithError() throws {
+        let result = try JSONDecoder().decode([Digest].self, from: digest2)
+        
+        XCTAssertEqual(result[0].label, "Fat")
+        XCTAssertEqual(result[1].label, "Carbs")
+        XCTAssertNil(result[0].tag)
+        XCTAssertNil(result[0].schemaOrgTag)
+        XCTAssertNil(result[0].total)
+        XCTAssertNil(result[0].hasRDI)
+        XCTAssertNil(result[0].daily)
+    }
 }
+
+/// Array of `Digest`s.
+private let digest1 = Data("""
+[
+  {
+    "label": "Fat",
+    "tag": "FAT",
+    "schemaOrgTag": "fatContent",
+    "total": 12.843255294562502,
+    "hasRDI": true,
+    "daily": 19.758854299326927,
+    "unit": "g"
+  },
+  {
+    "label": "Carbs",
+    "tag": "CHOCDF",
+    "schemaOrgTag": "carbohydrateContent",
+    "total": 5.840632371937501,
+    "hasRDI": true,
+    "daily": 1.9468774573125003,
+    "unit": "g"
+  }
+]
+""".utf8)
+
+/// Array of `Digest`s w/o some data.
+private let digest2 = Data("""
+[
+  {
+    "label": "Fat"
+  },
+  {
+    "label": "Carbs"
+  }
+]
+""".utf8)

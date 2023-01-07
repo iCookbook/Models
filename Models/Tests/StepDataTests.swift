@@ -20,6 +20,20 @@ class StepDataTests: XCTestCase {
         stepData = nil
     }
     
-    func testExample() throws {
+    func testInitWithoutImageData() throws {
+        let text = "Test"
+        stepData = StepData(text: text)
+        
+        XCTAssertEqual(stepData.text, text)
+        XCTAssertNil(stepData.imageData)
+    }
+    
+    func testInitWithImageData() throws {
+        let text = "Test"
+        let data = Data()
+        stepData = StepData(text: text, imageData: data)
+        
+        XCTAssertEqual(stepData.text, text)
+        XCTAssertEqual(stepData.imageData, data)
     }
 }
