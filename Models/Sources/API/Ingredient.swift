@@ -6,7 +6,7 @@
 //
 
 public struct Ingredient: Codable {
-	/// Ingredient's description (name and measure).
+    /// Ingredient's description (name and measure).
     public let text: String?
     /// Ingredient quantity.
     public let quantity: Double?
