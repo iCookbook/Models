@@ -6,7 +6,7 @@
 //
 
 /// Various types of diets provided by the API.
-public enum Diet: String, Codable {
+public enum Diet: String, Codable, CaseIterable {
     /// Protein/Fat/Carb values in 15/35/50 ratio.
     case balanced = "Balanced"
     /// More than 5g fiber per serving.
@@ -19,4 +19,14 @@ public enum Diet: String, Codable {
     case lowFat = "Low-Fat"
     /// Less than 140mg Na per serving.
     case lowSodium = "Low-Sodium"
+}
+
+extension Diet: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
+        nil
+    }
 }

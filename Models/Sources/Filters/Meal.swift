@@ -6,7 +6,7 @@
 //
 
 /// Meal types.
-public enum Meal: String, Codable {
+public enum Meal: String, Codable, CaseIterable {
     case breakfast
     case brunch
     case lunchDinner = "lunch/dinner"
@@ -14,8 +14,12 @@ public enum Meal: String, Codable {
     case teatime
 }
 
-extension Meal {
-    public var emoji: String {
+extension Meal: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
         switch self {
         case .breakfast:
             return "🥞"

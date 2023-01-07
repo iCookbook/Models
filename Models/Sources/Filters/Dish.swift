@@ -6,7 +6,7 @@
 //
 
 /// Various types of dishes provided by the API.
-public enum Dish: String, Codable {
+public enum Dish: String, Codable, CaseIterable {
     case alcoholCocktail = "alcohol cocktail"
     case biscuitsAndCookies = "biscuits and cookies"
     case bread = "bread"
@@ -34,9 +34,12 @@ public enum Dish: String, Codable {
     case sweets = "sweets"
 }
 
-extension Dish {
-    /// Emoji for any instance of this enum.
-    public var emoji: String {
+extension Dish: FilterProtocol {
+    public var description: String {
+        self.rawValue
+    }
+    
+    public var emoji: String? {
         switch self {
         case .alcoholCocktail:
             return "🍸"
@@ -89,10 +92,5 @@ extension Dish {
         case .sweets:
             return "🍬"
         }
-    }
-    
-    /// List of all instances of this enum.
-    public static var dishes: [Dish] {
-        return [.alcoholCocktail, .biscuitsAndCookies, .bread, .cereals, .condimentsAndSauces, .desserts, .drinks, .egg, .iceCreamAndCustard, .mainCourse, .pancake, .pasta, .pastry, .piesAndTarts, .pizza, .preps, .preserve, .salad, .sandwiches, .seafood, .sideDish, .soup, .specialOccasions, .starter, .sweets]
     }
 }
