@@ -45,7 +45,7 @@ class DigestTests: XCTestCase {
         XCTAssertNotNil(digest.daily)
     }
     
-    // MARK: - Codable tests
+    // MARK: - Decodable tests
     
     func test_decodeDigest_array() throws {
         let result = try? JSONDecoder().decode([Digest].self, from: digest1)

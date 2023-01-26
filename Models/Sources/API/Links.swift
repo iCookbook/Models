@@ -5,7 +5,7 @@
 //  Created by Егор Бадмаев on 26.10.2022.
 //
 
-public struct Links: Codable {
+public struct Links: Decodable {
     public let next: Next?
     
     // MARK: - Init
@@ -15,7 +15,7 @@ public struct Links: Codable {
     }
 }
 
-public struct HitLinks: Codable {
+public struct HitLinks: Decodable {
     public let linksSelf: Next?
     
     enum CodingKeys: String, CodingKey {
@@ -29,7 +29,7 @@ public struct HitLinks: Codable {
     }
 }
 
-public struct Next: Codable {
+public struct Next: Decodable {
     /// URL link.
     public let href: String?
     /// A title specifying what kind of link it is.

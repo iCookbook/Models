@@ -44,7 +44,7 @@ class RecipeTests: XCTestCase {
         XCTAssertEqual(recipe.imageData, a?.imageData)
     }
     
-    // MARK: - Codable tests
+    // MARK: - Decodable tests
     
     func test_decodingRecipe_fullData() throws {
         recipe = try? JSONDecoder().decode(Recipe.self, from: recipe1)

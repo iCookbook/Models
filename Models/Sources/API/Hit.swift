@@ -6,7 +6,7 @@
 //
 
 /// Wrapper over recipe and link to itself.
-public struct Hit: Codable {
+public struct Hit: Decodable {
     /// Recipe itself.
     public let recipe: Recipe?
     /// Link to the recipe.
