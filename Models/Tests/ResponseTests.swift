@@ -12,24 +12,41 @@ class ResponseTests: XCTestCase {
     
     var response: Response!
     
-    override func setUpWithError() throws {
-        
-    }
-    
     override func tearDownWithError() throws {
         response = nil
     }
     
     func test_decodingResponse_fullData() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Response.self, from: response1))
+        response = try? JSONDecoder().decode(Response.self, from: response1)
+        
+        XCTAssertNotNil(response, "The result of decoding should not be nil")
+        XCTAssertNil(response.links)
+        XCTAssertNotNil(response.hits)
+        XCTAssertEqual(response.from, 1)
+        XCTAssertEqual(response.to, 20)
+        XCTAssertEqual(response.count, 10000)
     }
     
     func test_decodingResponse_emptyResponse() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Response.self, from: response2))
+        response = try? JSONDecoder().decode(Response.self, from: response2)
+        
+        XCTAssertNotNil(response, "The result of decoding should not be nil")
+        XCTAssertNil(response.links)
+        XCTAssertNotNil(response.hits)
+        XCTAssertEqual(response.from, 1)
+        XCTAssertEqual(response.to, 20)
+        XCTAssertEqual(response.count, 10000)
     }
     
     func test_decodingResponse_nilResponse() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Response.self, from: response3))
+        let result = try? JSONDecoder().decode(Response.self, from: response3)
+        
+        XCTAssertNotNil(result, "The result of decoding should not be nil")
+        XCTAssertNil(response.count)
+        XCTAssertNil(response.hits)
+        XCTAssertNil(response.from)
+        XCTAssertNil(response.to)
+        XCTAssertNil(response.links)
     }
 }
 

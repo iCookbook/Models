@@ -13,9 +13,6 @@ class RecipeTests: XCTestCase {
     /// SUT
     var recipe: Recipe!
     
-    override func setUpWithError() throws {
-    }
-    
     override func tearDownWithError() throws {
         recipe = nil
     }
@@ -50,15 +47,23 @@ class RecipeTests: XCTestCase {
     // MARK: - Codable tests
     
     func test_decodingRecipe_fullData() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Recipe.self, from: recipe1))
+        recipe = try? JSONDecoder().decode(Recipe.self, from: recipe1)
+        
+        XCTAssertNotNil(recipe, "The result of decoding should not be nil")
     }
     
     func test_decodingRecipe_requiredData() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Recipe.self, from: recipe2))
+        recipe = try? JSONDecoder().decode(Recipe.self, from: recipe2)
+        
+        XCTAssertNotNil(recipe, "The result of decoding should not be nil")
     }
     
     func test_decodingRecipe_withoutDigestAndIngredients() throws {
-        XCTAssertNoThrow(try JSONDecoder().decode(Recipe.self, from: recipe3))
+        recipe = try? JSONDecoder().decode(Recipe.self, from: recipe3)
+        
+        XCTAssertNotNil(recipe, "The result of decoding should not be nil")
+        XCTAssertNil(recipe?.digest)
+        XCTAssertNil(recipe?.ingredients)
     }
 }
 

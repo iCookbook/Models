@@ -48,25 +48,28 @@ class DigestTests: XCTestCase {
     // MARK: - Codable tests
     
     func test_decodeDigest_array() throws {
-        let result = try JSONDecoder().decode([Digest].self, from: digest1)
-        XCTAssertEqual(result[0].label, "Fat")
-        XCTAssertEqual(result[0].tag, "FAT")
-        XCTAssertEqual(result[0].schemaOrgTag, "fatContent")
-        XCTAssertEqual(result[0].total, 12.843255294562502)
-        XCTAssertEqual(result[0].hasRDI, true)
-        XCTAssertEqual(result[0].daily, 19.758854299326927)
+        let result = try? JSONDecoder().decode([Digest].self, from: digest1)
+        
+        XCTAssertNotNil(result, "The result of decoding should not be nil")
+        XCTAssertEqual(result?[0].label, "Fat")
+        XCTAssertEqual(result?[0].tag, "FAT")
+        XCTAssertEqual(result?[0].schemaOrgTag, "fatContent")
+        XCTAssertEqual(result?[0].total, 12.843255294562502)
+        XCTAssertEqual(result?[0].hasRDI, true)
+        XCTAssertEqual(result?[0].daily, 19.758854299326927)
     }
     
     func test_decodeDigest_arrayWithError() throws {
-        let result = try JSONDecoder().decode([Digest].self, from: digest2)
+        let result = try? JSONDecoder().decode([Digest].self, from: digest2)
         
-        XCTAssertEqual(result[0].label, "Fat")
-        XCTAssertEqual(result[1].label, "Carbs")
-        XCTAssertNil(result[0].tag)
-        XCTAssertNil(result[0].schemaOrgTag)
-        XCTAssertNil(result[0].total)
-        XCTAssertNil(result[0].hasRDI)
-        XCTAssertNil(result[0].daily)
+        XCTAssertNotNil(result, "The result of decoding should not be nil")
+        XCTAssertEqual(result?[0].label, "Fat")
+        XCTAssertEqual(result?[1].label, "Carbs")
+        XCTAssertNil(result?[0].tag)
+        XCTAssertNil(result?[0].schemaOrgTag)
+        XCTAssertNil(result?[0].total)
+        XCTAssertNil(result?[0].hasRDI)
+        XCTAssertNil(result?[0].daily)
     }
 }
 
